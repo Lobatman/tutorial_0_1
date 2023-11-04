@@ -1,0 +1,226 @@
+---
+title: | 
+  ![](https://i.imgur.com/SWWUQpP.png){width=500px style="display: block; margin:0 auto;"}
+  Tutorial 1: Introdução a Linguagem R e uso da IDE para manipulação de dados
+author: "Victor Lobato dos Santos; Wellington Donizet Ferreira"
+output:
+  html_document:
+    highlight: haddock
+    includes:
+      in_header: "fever_icon.html"
+    theme: flatly
+    number_sections: yes
+    toc: yes
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
+  pdf_document:
+    toc: yes
+---
+
+<div class="text-justify"> 
+
+# Apresentação
+
+## O que é a linguagem R de programação?  
+  
+Para darmos início, vamos fazer uma breve introdução sobre o que é a linguagem R e por que ela se tornou tão popular no mundo das análises estatísticas, principalmente na bioestatística.  
+A linguagem R foi criada por Ross Ihaka e Robert Gentleman, a partir de uma linguagem conhecida como S pertencente a *Bell Laboratories*, daí surgiu o nome R, que além de referenciar o nome de seus criadores, também faz um jogo figurado com a linguagem S.  
+ O R veio com o intuito de facilitar análises estatísticas e se tornou bastante popular no universo das análises de dados nas mais diferentes áreas como a epidemiologia, biologia, medicina, bioestatística e demais outros campos científicos.  
+ 
+## Por que utilizar o R na bioestatística?  
+  
+Mesmo existindo outras linguagens de programação que podem cumprir alguns papeis na análise estatística, o R se popularizou principalemnte por ser uma linguagem de programação com código aberto (Open Source), ou seja, qualquer interessado na área pode utilizar e alterar o código fonte de forma livre, o que permite a criação de diversos pacotes, que hoje ultrapassam de 18.000. Além disso o R é totalmente gratuito, sendo uma opção acessível para estudantes, pesquisadires, profissionais e entusisastas que queiram se aventurar no mundo das análises estatísticas.  
+Outro ponto importante, que garante a estabilidade do R como uma das principais linguagens de programação para análises de dados e estatística, é a participação ativa de sua comunidade, que está sempre atualizando e criando novos pacotes para os mais diferentes usos.  
+  
+## Começando no R  
+  
+Assim como todo novo aprendizado, o início pode ser desafiador, mas com o interesse e a prática, você perceberá que trabalhar com a linguagem R é bastante intuitivo.  
+Neste tutorial em específico, nós iremos aprender os conceitos básicos da Linguagem R. Vamos ver o que são variáveis, objetos, como instalar pacotes, e como utilizar corretamente o ambiente de desenvolvimento integrado (IDE) do R para a bioestatística.  
+
+
+# Instalando o R e Rstudio  
+  
+Abaixo, iremos aprender como baixar o R e o Rstudio.  
+
+## Instalando o R  
+Antes de instalar o Rstudio, é necessário realizar a  instalação do R base para utilizar a IDE do R, portanto primeiro iremos baixar e instalar o R, aqui nós faremos os passos de instalação para o sistema operacional Windows.  
+
+Para instalar o R, siga os seguintes passos:  
+
+* Acesse o site [https://cran.r-project.org];  
+
+* Selecione a opção **"Download for Windows"**;  
+
+* Clique na opção **"install R for the first time."**;  
+
+* Clique na opção **"Download R for Windows"**; 
+
+* Execute o arquivo baixado e siga os passos do assistente de instalação.  
+  
+## Instalando o R Studio
+O R base é usado como linha de comando, e apesar de ser uma opção, a IDE do R (R Studio), é mais utilizada e mais simples de se trabalhar e, é nela que aprenderemos a utilizar esta linguagem. Portanto, também iremos baixar e instalar o RStudio.  
+  
+  
+* Acesse o site oficial [https://posit.co/download/rstudio-desktop/];  
+
+* Clique na opção **"Download RStudio Desktop for Windows"**;  
+
+* Baixe e execute o arquivo, seguindo os passos do assistente de instalação.  
+  
+Com o R e o Rstudio instalado, podemos começar a utilizar o Rstudio.  
+
+# Conhecendo o Ambiente de Desenvolvimento Integrado (IDE) RStudio  
+ 
+O ambiente de Desenvolvimento Integrado é um software que fornece ao usuário um espaço de trabalho com diferentes ferramentas que auxiliem no desenvolvimento de aplicações e programas em uma linguagem de programação, muitas vezes, simplificando este processo de de desenvolvimento. No R, este Ambiente de Desenvolvimento Integrado é o Rstudio, que diferente do Rbase que apresenta apenas o console de comandos, aqui nós temos uma interface intuitiva e amigável que nos ajuda a desenvolver scripts com mais facilidade, além de fornecer alguns recursos que aumente a efetividade das análises de dados.  
+
+## Quais benefícios do IDE no R?
+  
+Mesmo que seja possível realizar comandos da linguagem R, diretamente em seu console, o IDE traz vantagens que se relacionam principalmente para a execução efetiva de análises de dados. Dentro de algumas vantagens, que você também perceberá com o tempo, temos:  
+
+* **Inteface Gráfica Intuitiva**: O RStudio possui uma interface gráfica, com vários menus que facilitam a interação, muitos dos comandos básicos que você irá utilizar para desenvolver scripts, podem também serem acessados através da interface gráfica;  
+
+* **Realce de Sintaxe**: Dentro do Rstudio, você perceberá que este IDE contêm realnce de sintaxe, o que auxilia no momento da escrita e deixa mais fácil a indentificação de erros nas linhas de código;  
+
+* **Ambiente de Trabalho Múltiplo**: Este IDE permite que você trabalhe de forma simultânea com vários arquivos e várias abas dentro do mesmo;  
+
+* **Históricos**: A IDE apresenta também, o histórico dos comandos que você irá executar, facilitando no momento de revisão, identificação de erros e deupuração;  
+
+* **Visualização de Gráficos**: Um dos principais benefícios do Rstudio, é a possibilidade de realizar o plot e visualização de gráficos gerados a partir de scripts, além de permitir salva-los em diferentes tipos de arquivo e diferentes qualidades.  
+  
+## Divisão da interface do RStudio  
+  
+Você pode ver que, o Rstudio apresenta quatro paineis principais: Source, Console, Environment/History, Files/Plots/Packages/Help. Cada um desses paineis, apresentam diferentes funcionalidades.  
+
+  
+### Source
+Source é a área de trabalho principal do Rstudio, é nela que você irá criar e editar seus scripts, executar comandos, abrir diversas abas e tabelas. 
+  
+Para abrir um painel do Source, ou uma nova aba basta você ir na opção **File** no canto superior esquerdo da tela, selecionar a opção **New File** e escolher a opção **R Script**. Assim você irá abrir um novo painel Source para trabalhar.  
+Você pode também acessar diretamente pelo comando **Ctrl + Shift + N**, caso você esteja trabalhando no Windows ou Linux.  
+  
+![figura 1.0: Painel Source do Rstudio.](E:/Victor/Faculdade/projeto_bioestatistica_r_2023/tutorial_0_1/figura0.png){width=60%}  
+  
+  
+Neste painel, onde você irá trabalhar, é possível identificar algumas funcionalidades:  
+
+* **Realce da Sintaxe**: Como abordado antes, um dos benefícios do IDE do R, é o realce de sintexe, no painel Source, você irá identificar que os códigos escritos, possuem diferentes identificações por cores, ou grafagem;  
+
+* **Contagem de linhas**: No canto esquerdo do painel Source, temos o número de linhas presente no seu código. Estas linhas auxiliam bastante para identificar erros e encontrar partes específicas do código;  
+
+* **Comentários**: É possível adicionar comentários no decorrer do seu script. Comentários são frases que ajudam a entender parte de um código, explicar o que foi realizado em determinado trecho, adicionar lembretes, dentre outros. Apesar do comentário estar presente na linha do código, sempre que você escrever uma frase precedida do caractere **#**, significa que o Rstudio não executara aquela frase e ela será identificada apenas como comentário.  
+
+
+### Console  
+O console, localizado no canto  inferior esquerdo do Rstudio (figura 1.1 ), é o local que o usuário pode executar comandos e visualizar os resultados. É no console que será exibido o resultado dos scripts, nele você pode também, testar códigos que poderão ser acrescentados nos scripts. Vale lembrar que, linhas de códigos escritas e geradas diretamente no console, não serão salvas em documento .R.
+
+![figura 1.1: Console do RStudio](E:/Victor/Faculdade/projeto_bioestatistica_r_2023/tutorial_0_1/figura1.png)  
+  
+  
+
+* No canto esquerdo do console existe um ícone de vassoura, que serve para você limpar todo o campo do console;  
+* O sinal de "*>*" é chamado de *prompt* e indica para você que o console está apto para receber um comando nesta linha.   
+
+  
+![figura 1.2: autocomplementação de comandos](E:/Victor/Faculdade/projeto_bioestatistica_r_2023/tutorial_0_1/figura1.1.png)  
+  
+
+  
+Para realizar comandos no console, é preciso apenas digita-los e em seguida precionar a tecla *Enter*. O objeto de saída dos comandos / resultado, é o que denominamos de **output** (saída), o mesmo é identificado pelos caractéres **##** indicando que existe resultado a ser exibido.  
+  
+Faça um teste e realize um comando simples de soma e subtração no console:  
+```{r, message=FALSE, warning=FALSE}
+5 + 10 - 2
+
+```
+  
+Observe que aqui neste exemplo, o resultado foi precedido do número [1] entre colchetes, este número indica que a saída adiante, é o primeiro elemento do resultado.  
+  
+### Environment/History  
+O painel Enviroment (Ambiente), localizado no canto superior esquerdo do Rstudio, é onde você irá encontrar os objetos que estão disponíveis e/ou sendo utilizados em seu ambiente de trabalho. Sempre que você carrega um objeto, seja ele um arquivo csv, variável, etc, ele será apresentando neste painel.  
+  
+![figura 1.3: Painel Environment](E:/Victor/Faculdade/projeto_bioestatistica_r_2023/tutorial_0_1/figura1.3.png)  
+  
+Podemos dividir este Painel em algumas seções:  
+
+* **Global Environment**: Aqui é possível identificar os objetos que foram carregados ou criados a partir de um script, todos os objetos são identificados por linhas separadas por: nome, tipo, valor, tamanho e dimensão;  
+
+* **History**: NA seção de histórico, é possível visualizar os comandos que foram realizados no console, de forma que cada linha irá representar um comando executado.  
+  
+O Painel Environment possui também a opção de limpar o ambiente, identificado por um ícone de vassoura, ao clicar nesta opção, ele limpará todos os objetos presentes em seu Global Envinroment.  
+  
+## Files/Plots/Packages/Help  
+O painel files, subidivido em plots, packages e help, é utilizado para acessar arquivos e pastas que estão presentes no diretório raiz de seu projeto, ou seja, o diretório que, através da opção *set working directory*, você escolheu para salvar os arquivos de seu script. A partir dele você pode visualziar e manipular seus arquivos diretamente do Rstudio.  
+  
+![figura 1.4: Painel Files.](E:/Victor/Faculdade/projeto_bioestatistica_r_2023/tutorial_0_1/figura1.4.png){width=70%}
+  
+Dentro das subdivões deste painel temos:  
+
+* **Plots**: Utilizado para visualizar os gráficos que foram gerados pelo R, a partir dele você pode visualizar os gráficos gerados e exporta-los nos formados PDF, JPEG e PNG. 
+
+* **Packages**: Esta seção do painel irá te mostrar todos os pacotes/bibliotecas que foram instaladas no Rstudio, permitindo qeu você organize, liste, carregue e instale pacotes;  
+
+* **Help**: A seção Help (ajuda) é uma opção bastante útil durante a utilização do Rstudio, ela fornece para o usuário, informações e exemplos sobre diversos comandos, argumentos e pacotes do R. Sempre que tiver dúvida sobre um argumento ou pacote, precione a tecla *F1* em cima de uma função ou biblioteca, que você será direcionado para a sessão help e poderá obter detalhes sobre sua dúvida.  
+
+# Definindo um Diretório de Trabalho  
+  
+Um dos primeiros passos para trabalhar no Rstudio, é definir um diretório de trabalho. O diretório de trabalho é basicamente a pasta onde ficarão salvos seus scripts e arquivos como tabelas csv, plots e outras ferramentas que serão criadas a partir de seu script, de forma que você saiba onde seus arquivos ficarão salvos e também onde você irá encontra-los.  
+  
+A forma mais simples para selecionar o diretório de trabalho é a partir da opção **Session** indicada o canto superior na barra de menus do Rstudio. Clique nesta opção e em seguida selecione **Set Working Directory** (Definir Diretório de Trabalho). Após isso, escolha a opção **Choose Directory** (Escolher diretório), e escolha uma pasta (diretório) do seu computador ou crie uma para salvar tudo que será criado a partir deste script. 
+  
+Outra opção para selecionar um diretório de trabalho, é a partir da função ``setwd()``, que também tem o mesmo papel da opção utilizada anteriormente. Para esta opção podemos fazer o seguinte:  
+  
+```{r, warning=FALSE, message=FALSE}
+#Selecionando um diretório de trabalho
+
+#setwd(C:/caminho/do/diretorio")
+
+```
+
+Substitua o "C:/camiinho/do/diretorio" pelo caminho do diretório que você quer usar para salvar e acessar os arquivos deste script.  
+Podemos utilizar também a função ``getwd()`` para verificar se o diretório antes selecionado, é o nosso diretório de trabalho atual. 
+
+# Pacotes
+ 
+
+Pacotes são ferramentas essenciais na linguagem R, eles fornecem diversas maneiras de se executar um código, realizar uma análise, criar gráficos, dentre milhares de outras funcionalidades. Atualmente existem mais de 18.000 pacotes no R.  
+
+
+## Como instalar pacotes
+
+Existem algumas maneiras de se instalar um pacote no R. A primeira opção e a mais utilizada, é através do comando `install.packages()`. Para esse comando, deve-se escrever dentro do parênteses, o nome do pacote desejado, entre áspas *"*.\
+Fique atento ao console, nele você poderá observar se o pacote foi instalado com sucesso. Perceba que ao final da instalação, no console aparecerá o sinal de *\>*
+
+```{r, warning=FALSE, message=FALSE}
+# install.packages("dplyr")
+library("dplyr")
+```
+
+A segunda opção, também muito utilizada é através da opção *packages*, localizada no canto inferior direito do RStudio, entre as opções Plots e Help. Após clicar nesta opção, selecione a opção *install*, escreva o nome do pacote desejado e clique em instalar.
+
+A terceira opção, é utilizada para quando não se sabe se um pacote está instalado, para isso utiliza-se `if(!require("nome_do_pacote")` `install.plackages("nome_do_pacote")`. O comando *if*, traduzindo do literal e também em linguagens de programação, significa *se*, enquanto que *require* vem do verbo requerer. Portanto ao escrever esse comando você quer dizer: "tente carregar este pacote. Caso ele não exista, instale-o".
+
+```{r, warning=FALSE, message=FALSE}
+if(!require(dplyr))
+  install.packages("dplyr")
+```
+
+## Como carregar pacotes
+
+Para carregar pacotes no R, existem algumas opções. Uma delas é através do comando `library(nome_do_pacote)`, sem aspas dentro do parênteses. Outra opção é através do `require(nome_do_pacote)`, que segue o mesmo pressuposto. Existem outras maneiras de se carregar e instalar um pacote no R, essas são apenas algumas opções mais viáveis.
+
+```{r, warning=FALSE, message=FALSE}
+library(car)
+require(car)
+```
+  
+# Referências
+
+*  R Core Team (2022). R: A language and environment for statistical computing. R
+  Foundation for Statistical Computing, Vienna, Austria. URL <https://www.R-project.org/>.
+
+* Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A Grammar of Data
+  Manipulation_. R package version 1.1.3, <https://CRAN.R-project.org/package=dplyr>.  
+
+
+</div>
